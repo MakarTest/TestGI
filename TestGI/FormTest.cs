@@ -14,13 +14,8 @@ namespace TestGI
     {
         Random rnd = new Random();
 
-        Question question1 = new Question("2 + 2 * 2", 6);
-        Question question2 = new Question("Бревно нужно разделить на 10 частей, сколько сделать распислов?", 9);
-        Question question3 = new Question("На двух руках 10 пальцев, сколько пальцев на 5 руках?", 25);
+        List<Question> listQuestion = new List<Question>();
 
-
-        string[] questions = { "2 + 2 * 2", "бревно", "пальцы", "уколы", "свечи" };
-        int[] anwers = { 6, 9, 25, 60, 3 };
         int indexQuestion = 0;
         int countRightAnswer = 0;
         string[] diagnose = { "идиот", "кретин", "дурак", "норма", "талант", "гений" };
@@ -30,7 +25,15 @@ namespace TestGI
         {
             InitializeComponent();
             //startTest();
-            labelQuestion.Text = question2.ToString();
+            Question question1 = new Question("2 + 2 * 2", 6);
+            listQuestion.Add(question1);
+
+            listQuestion.Add(new Question("Бревно нужно разделить на 10 частей, сколько сделать распислов?", 9));
+            listQuestion.Add(new Question("На двух руках 10 пальцев, сколько пальцев на 5 руках?", 25));
+            listQuestion.Add(new Question("Укол делаю каждые полчаса, сколько нужно минут на 3 укола?", 60));
+            listQuestion.Add(new Question("5 свечей горелоа, три погасло. Сколько свечей осталось?", 3));
+
+            labelQuestion.Text = listQuestion[0].ToString();
         }
 
         int[] shuffle()
@@ -53,22 +56,22 @@ namespace TestGI
             orderQuestions = shuffle();
             indexQuestion = 0;
             countRightAnswer = 0;
-            labelQuestion.Text = questions[orderQuestions[indexQuestion]];
+            labelQuestion.Text = listQuestion[orderQuestions[indexQuestion]].ToString();
             labelNumberOfQuestion.Text = "Вопрос №" + (indexQuestion + 1).ToString();
             buttonNewStart.Visible = false;
         }
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)
         {
-            if (indexQuestion < questions.Length)
+            if (indexQuestion < listQuestion.Count)
             {
                 int userAnswer = Convert.ToInt32(textBoxUserAnswer.Text);
-                if (userAnswer == anwers[orderQuestions[indexQuestion]])
+                if (userAnswer == listQuestion[orderQuestions[indexQuestion]].rightAnswer)
                     countRightAnswer++;
                 indexQuestion++;
-                if (indexQuestion < questions.Length)
+                if (indexQuestion < listQuestion.Count)
                 {
-                    labelQuestion.Text = questions[orderQuestions[indexQuestion]];
+                    labelQuestion.Text = listQuestion[orderQuestions[indexQuestion]].ToString();
                     labelNumberOfQuestion.Text = "Вопрос №" + (indexQuestion + 1).ToString();
                 }
             }
