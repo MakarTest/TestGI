@@ -66,7 +66,7 @@ namespace TestGI
             if (indexQuestion < listQuestion.Count)
             {
                 int userAnswer = Convert.ToInt32(textBoxUserAnswer.Text);
-                if (userAnswer == listQuestion[orderQuestions[indexQuestion]].rightAnswer)
+                if (listQuestion[orderQuestions[indexQuestion]].CheckAnswer(userAnswer))
                     countRightAnswer++;
                 indexQuestion++;
                 if (indexQuestion < listQuestion.Count)

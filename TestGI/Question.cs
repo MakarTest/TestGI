@@ -10,7 +10,7 @@ namespace TestGI
     class Question
     {
         string textQuestion;
-        public int rightAnswer;
+        int rightAnswer;
 
         public Question(string text, int answer) 
         { 
@@ -20,6 +20,11 @@ namespace TestGI
 
         public string ToString()
         { return textQuestion; }
+
+        public bool CheckAnswer(int userAnswer)
+        { 
+            return rightAnswer == userAnswer;
+        }
 
     }
 }
