@@ -13,6 +13,12 @@ namespace TestGI
     public partial class FormTest : Form
     {
         Random rnd = new Random();
+
+        Question question1 = new Question("2 + 2 * 2", 6);
+        Question question2 = new Question("Бревно нужно разделить на 10 частей, сколько сделать распислов?", 9);
+        Question question3 = new Question("На двух руках 10 пальцев, сколько пальцев на 5 руках?", 25);
+
+
         string[] questions = { "2 + 2 * 2", "бревно", "пальцы", "уколы", "свечи" };
         int[] anwers = { 6, 9, 25, 60, 3 };
         int indexQuestion = 0;
@@ -23,13 +29,15 @@ namespace TestGI
         public FormTest()
         {
             InitializeComponent();
-            startTest();
+            //startTest();
+            labelQuestion.Text = question2.ToString();
         }
 
         int[] shuffle()
         {
             int[] temp = {0, 1, 2, 3, 4};
             for (int i = 0; i < 10; i++)
+
             {
                 int ind1 = rnd.Next(0, 5);
                 int ind2 = rnd.Next(0, 5);
