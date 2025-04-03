@@ -28,37 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelQuestion = new System.Windows.Forms.Label();
             this.textBoxUserAnswer = new System.Windows.Forms.TextBox();
             this.buttonNextQuestion = new System.Windows.Forms.Button();
             this.buttonNewStart = new System.Windows.Forms.Button();
             this.labelNumberOfQuestion = new System.Windows.Forms.Label();
+            this.labelQuestion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // labelQuestion
-            // 
-            this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelQuestion.Location = new System.Drawing.Point(174, 113);
-            this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(86, 31);
-            this.labelQuestion.TabIndex = 0;
-            this.labelQuestion.Text = "label1";
             // 
             // textBoxUserAnswer
             // 
             this.textBoxUserAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxUserAnswer.Location = new System.Drawing.Point(177, 167);
+            this.textBoxUserAnswer.Location = new System.Drawing.Point(227, 206);
+            this.textBoxUserAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxUserAnswer.Name = "textBoxUserAnswer";
-            this.textBoxUserAnswer.Size = new System.Drawing.Size(315, 38);
+            this.textBoxUserAnswer.Size = new System.Drawing.Size(419, 46);
             this.textBoxUserAnswer.TabIndex = 1;
             // 
             // buttonNextQuestion
             // 
             this.buttonNextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNextQuestion.Location = new System.Drawing.Point(177, 222);
+            this.buttonNextQuestion.Location = new System.Drawing.Point(236, 273);
+            this.buttonNextQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonNextQuestion.Name = "buttonNextQuestion";
-            this.buttonNextQuestion.Size = new System.Drawing.Size(315, 47);
+            this.buttonNextQuestion.Size = new System.Drawing.Size(420, 58);
             this.buttonNextQuestion.TabIndex = 2;
             this.buttonNextQuestion.Text = "Следующий вопрос";
             this.buttonNextQuestion.UseVisualStyleBackColor = true;
@@ -67,9 +59,10 @@
             // buttonNewStart
             // 
             this.buttonNewStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNewStart.Location = new System.Drawing.Point(177, 293);
+            this.buttonNewStart.Location = new System.Drawing.Point(236, 361);
+            this.buttonNewStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonNewStart.Name = "buttonNewStart";
-            this.buttonNewStart.Size = new System.Drawing.Size(315, 48);
+            this.buttonNewStart.Size = new System.Drawing.Size(420, 59);
             this.buttonNewStart.TabIndex = 3;
             this.buttonNewStart.Text = "Начать сначала";
             this.buttonNewStart.UseVisualStyleBackColor = true;
@@ -80,22 +73,34 @@
             // 
             this.labelNumberOfQuestion.AutoSize = true;
             this.labelNumberOfQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumberOfQuestion.Location = new System.Drawing.Point(174, 64);
+            this.labelNumberOfQuestion.Location = new System.Drawing.Point(210, 23);
+            this.labelNumberOfQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumberOfQuestion.Name = "labelNumberOfQuestion";
-            this.labelNumberOfQuestion.Size = new System.Drawing.Size(86, 31);
+            this.labelNumberOfQuestion.Size = new System.Drawing.Size(109, 39);
             this.labelNumberOfQuestion.TabIndex = 4;
             this.labelNumberOfQuestion.Text = "label1";
             // 
+            // labelQuestion
+            // 
+            this.labelQuestion.Enabled = false;
+            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelQuestion.Location = new System.Drawing.Point(217, 105);
+            this.labelQuestion.Multiline = true;
+            this.labelQuestion.Name = "labelQuestion";
+            this.labelQuestion.Size = new System.Drawing.Size(730, 94);
+            this.labelQuestion.TabIndex = 5;
+            // 
             // FormTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.labelNumberOfQuestion);
             this.Controls.Add(this.buttonNewStart);
             this.Controls.Add(this.buttonNextQuestion);
             this.Controls.Add(this.textBoxUserAnswer);
-            this.Controls.Add(this.labelQuestion);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTest";
             this.Text = "Тест ГЕНИЙ - ИДИОТ";
             this.ResumeLayout(false);
@@ -104,12 +109,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.TextBox textBoxUserAnswer;
         private System.Windows.Forms.Button buttonNextQuestion;
         private System.Windows.Forms.Button buttonNewStart;
         private System.Windows.Forms.Label labelNumberOfQuestion;
+        private System.Windows.Forms.TextBox labelQuestion;
     }
 }
 

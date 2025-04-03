@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestGI
 {
-    class Question
+    public class Question
     {
         string textQuestion;
         int rightAnswer;
@@ -18,13 +18,12 @@ namespace TestGI
             rightAnswer = answer;
         }
 
-        public string ToString()
+        public override string ToString()
         { return textQuestion; }
 
         public bool CheckAnswer(int userAnswer)
-        { 
+        {
             return rightAnswer == userAnswer;
         }
-
     }
 }
